@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajendra Thakurdesai</title>
+<meta name="description" content="Systems architect. 19 years turning complex systems into clear architectural visions.">
+<link rel="canonical" href="https://rajanthakurdesai.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #FAF6F0;
+    --ink: #3B2F1E;
+    --ink-mid: #5A4D3C;
+    --muted: #6B5D4F;
+    --accent: #C4A45A;
+    --accent-dim: rgba(196, 164, 90, 0.3);
+    --rule: #D4C9B8;
+    --serif: 'EB Garamond', Georgia, serif;
+    --mono: 'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  html { background: #E5E0D8; }
+
+  body {
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.68;
+    color: var(--ink);
+    background: var(--bg);
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 48px 60px 64px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--accent-dim); }
+
+  a {
+    color: var(--ink-mid);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    transition: color 0.2s, border-color 0.2s;
+  }
+  a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* ── HEADER ── */
+  header {
+    text-align: center;
+    padding-bottom: 24px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-size: 38px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+
+  .tagline {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ── SECTION ── */
+  section {
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .label {
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  /* ── ABOUT ── */
+  .about p {
+    margin-bottom: 6px;
+    color: var(--ink-mid);
+    line-height: 1.72;
+  }
+  .about p:last-child { margin-bottom: 0; }
+  .about .closer { font-style: italic; color: var(--muted); }
+
+  /* ── PROJECTS ── */
+  .project {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #EDE8E0;
+  }
+  .project:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+
+  .project h3 {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 2px;
+  }
+
+  .project .meta {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 300;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+  }
+
+  .project p {
+    color: var(--ink-mid);
+    font-size: 15.5px;
+    line-height: 1.7;
+    margin-bottom: 8px;
+  }
+
+  .project .impact {
+    font-family: var(--mono);
+    font-size: 9.5px;
+    font-weight: 300;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+
+  /* ── QUOTES ── */
+  .quote {
+    margin-bottom: 18px;
+    padding-left: 16px;
+    border-left: 2px solid var(--accent-dim);
+  }
+  .quote:last-child { margin-bottom: 0; }
+
+  .quote p {
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.62;
+    color: var(--ink-mid);
+    margin-bottom: 3px;
+  }
+
+  .quote .attr {
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 300;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* ── CONTACT ── */
+  .contact .links {
+    font-size: 15px;
+    color: var(--muted);
+  }
+
+  .contact .sep {
+    display: inline-block;
+    margin: 0 8px;
+    color: var(--rule);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    margin-top: 28px;
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 300;
+    color: var(--rule);
+    letter-spacing: 0.06em;
+    text-align: center;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 640px) {
+    body { padding: 28px 20px 40px; font-size: 16px; }
+    h1 { font-size: 28px; }
+    header { padding-bottom: 18px; margin-bottom: 22px; }
+    section { margin-bottom: 22px; padding-bottom: 22px; }
+    .project { margin-bottom: 18px; padding-bottom: 18px; }
+    .project h3 { font-size: 18px; }
+    .quote { padding-left: 12px; margin-bottom: 14px; }
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    html, body { background: #fff; max-width: none; padding: 28px; font-size: 10pt; }
+    a { color: var(--ink); border: none; }
+    a::after { content: " (" attr(href) ")"; font-size: 8pt; color: var(--muted); }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Rajendra Thakurdesai</h1>
+  <div class="tagline">Systems architect · Complexity translator · Platform builder</div>
+</header>
+
+<section class="about">
+  <span class="label">The Through-Line</span>
+  <p>I start every problem by making it visible. A diagram, a mind map, a system sketch. Clarity precedes good architecture.</p>
+  <p>For nineteen years I've done the same thing across payments infrastructure, search systems, and commerce platforms: stand outside a complex system, feel where the pressure is accumulating, and make one move that reorganizes everything.</p>
+  <p>I think in layers: what does the customer need today, what does the system need to become, and what's the smallest step that moves toward both.</p>
+  <p class="closer">I don't chase trends. I build foundations.</p>
+</section>
+
+<section>
+  <span class="label">Signature Work</span>
+
+  <article class="project">
+    <h3>OMS Workflow Orchestration Engine</h3>
+    <div class="meta">Meta · 2020–2024</div>
+    <p>Multiple product teams couldn't onboard. One major product line couldn't integrate at all. Diagnosed the root cause as a structural impossibility in the platform's type system. Not a bug — a category-level design error. Spent two years making the case. Executed a 1,000-file migration with zero incidents. Built the replacement: a DAG-based workflow orchestration engine with a novel type system, version control, and visualization tooling. Five verticals, fifteen-plus products, billions of requests per year, multi-billion dollar payment volume. Grew to a team of six. Platform became so critical a dedicated team was created to assume ownership.</p>
+    <div class="impact">Zero-incident migration · Billions of requests/year · Platform outlived the team · 5 verticals · 15+ products</div>
+  </article>
+
+  <article class="project">
+    <h3>AWS Data Exchange — Search Vision &amp; Launch</h3>
+    <div class="meta">AWS · 2017–2020</div>
+    <p>Designed and launched the Marketplace feature of AWS Data Exchange, contributing to the service's path to GA. Built the search ingestion pipeline that decoupled publishing from indexing. Created the search vision mind map that aligned all ADX leadership on product direction — became the team's architectural reference document. Go-to architect; could diagram the entire ADX architecture on demand.</p>
+    <div class="impact">Aligned leadership · Enabled GA · Became the team's architectural reference</div>
+  </article>
+
+  <article class="project">
+    <h3>EFD Project Rescue — CashPro Global Payments</h3>
+    <div class="meta">Bank of America · 2007–2017</div>
+    <p>Took ownership of a payments delivery struggling for two months. Diagnosed root problems, realigned the team, delivered with zero defects. Enabled major client migrations off legacy systems. Built automation reducing two-week processes to two to three days. Led four agile teams building payment processing for enterprise banking clients.</p>
+    <div class="impact">Zero-defect delivery · Unblocked strategic client migrations · Built lasting trust</div>
+  </article>
+</section>
+
+<section>
+  <span class="label">What People Say</span>
+
+  <div class="quote">
+    <p>"His superpower is his ability to distill big product ideas into documents and artifacts that others can understand."</p>
+    <div class="attr">Peer, AWS Data Exchange</div>
+  </div>
+
+  <div class="quote">
+    <p>"Getting lighting in meeting rooms just right. Rajan has quietly delivered a number of components that were stretch goals in our launch, and he did it with very little overhead."</p>
+    <div class="attr">Peer, AWS Data Exchange</div>
+  </div>
+
+  <div class="quote">
+    <p>"He is not just a cornerstone but a foundation on which the entire team can rely upon."</p>
+    <div class="attr">SVP, Senior Technology Manager, Bank of America</div>
+  </div>
+
+  <div class="quote">
+    <p>"You have consistently shown an ability to solve difficult technical problems with clean and well-articulated solutions which are above the standard at your level."</p>
+    <div class="attr">Engineering Manager, Meta</div>
+  </div>
+</section>
+
+<section class="contact">
+  <span class="label">Say Hello</span>
+  <div class="links">
+    <a href="mailto:rthakurdesai@gmail.com">rthakurdesai@gmail.com</a>
+    <span class="sep">·</span>
+    <a href="https://linkedin.com/in/rajanthakurdesai">LinkedIn</a>
+  </div>
+</section>
+
+<footer>Rajendra Thakurdesai</footer>
+
+</body>
+</html>
