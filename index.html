@@ -14,294 +14,43 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://rajanthakurdesai.com/og-image.png">
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --bg: #FAF6F0;
-    --ink: #3B2F1E;
-    --ink-mid: #5A4D3C;
-    --muted: #6B5D4F;
-    --accent: #C4A45A;
-    --accent-dim: rgba(196, 164, 90, 0.3);
-    --rule: #D4C9B8;
-    --serif: 'EB Garamond', Georgia, serif;
-    --mono: 'JetBrains Mono', 'Courier New', monospace;
-  }
-
-  html { background: #E5E0D8; }
-
-  body {
-    font-family: var(--serif);
-    font-size: 17px;
-    line-height: 1.68;
-    color: var(--ink);
-    background: var(--bg);
-    max-width: 1220px;
-    margin: 0 auto;
-    padding: 48px 60px 64px;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* prose stays at its readable measure; the page container is wider for the figure */
-  header, section { max-width: 700px; margin-left: auto; margin-right: auto; }
-
-  section.figure {
-    border-bottom: none;
-    background: none;
-    padding: 0;
-    margin: 56px auto;
-  }
-
-  p, blockquote, h1, h3 { text-wrap: pretty; }
-
-  ::selection { background: var(--accent-dim); }
-
-  a {
-    color: var(--ink-mid);
-    text-decoration: none;
-    border-bottom: 1px solid var(--rule);
-    transition: color 0.2s, border-color 0.2s;
-  }
-  a:hover { color: var(--accent); border-bottom-color: var(--accent); }
-
-  /* ── HEADER ── */
-  header {
-    text-align: center;
-    padding-bottom: 24px;
-    margin-bottom: 28px;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  h1 {
-    font-family: var(--serif);
-    font-size: 38px;
-    font-weight: 400;
-    letter-spacing: 0.01em;
-    color: var(--ink);
-    line-height: 1.2;
-    margin-bottom: 6px;
-  }
-
-  .tagline {
-    font-family: var(--mono);
-    font-size: 10px;
-    font-weight: 300;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-
-  /* ── SECTION ── */
-  section {
-    margin-bottom: 28px;
-    padding-bottom: 28px;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  section:last-of-type {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
-
-  .label {
-    font-family: var(--mono);
-    font-size: 9px;
-    font-weight: 400;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--accent);
-    display: block;
-    margin-bottom: 12px;
-  }
-
-  /* ── ABOUT ── */
-  .about p {
-    margin-bottom: 6px;
-    color: var(--ink-mid);
-    line-height: 1.72;
-  }
-  .about p:last-child { margin-bottom: 0; }
-  .about .closer { font-style: italic; color: var(--muted); }
-
-  /* ── PROJECTS ── */
-  .project {
-    margin-bottom: 24px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid #EDE8E0;
-  }
-  .project:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
-
-  .project h3 {
-    font-family: var(--serif);
-    font-size: 20px;
-    font-weight: 500;
-    color: var(--ink);
-    line-height: 1.3;
-    margin-bottom: 2px;
-  }
-
-  .project .meta {
-    font-family: var(--mono);
-    font-size: 10px;
-    font-weight: 300;
-    color: var(--muted);
-    letter-spacing: 0.04em;
-    margin-bottom: 8px;
-  }
-
-  .project p {
-    color: var(--ink-mid);
-    font-size: 15.5px;
-    line-height: 1.7;
-    margin-bottom: 8px;
-  }
-
-  .project .impact,
-  .impact {
-    font-family: var(--mono);
-    font-size: 9.5px;
-    font-weight: 300;
-    color: var(--muted);
-    letter-spacing: 0.02em;
-  }
-
-  /* ── QUOTES ── */
-  .quote {
-    margin-bottom: 18px;
-    padding-left: 16px;
-    border-left: 2px solid var(--accent-dim);
-  }
-  .quote:last-child { margin-bottom: 0; }
-
-  .quote p {
-    font-style: italic;
-    font-size: 15px;
-    line-height: 1.62;
-    color: var(--ink-mid);
-    margin-bottom: 3px;
-  }
-
-  .quote .attr {
-    font-family: var(--mono);
-    font-size: 9px;
-    font-weight: 300;
-    color: var(--muted);
-    letter-spacing: 0.04em;
-  }
-
-
-  /* ── FULL RECORD ── */
-  .record-line { font-size: 14.5px; color: var(--muted); margin-bottom: 4px; line-height: 1.5; }
-  .record-line strong { color: var(--ink-mid); font-weight: 500; }
-
-  /* ── CONTACT ── */
-  .contact .links {
-    font-size: 15px;
-    color: var(--muted);
-  }
-
-  .contact .sep {
-    display: inline-block;
-    margin: 0 8px;
-    color: var(--rule);
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    margin-top: 28px;
-    font-family: var(--mono);
-    font-size: 9px;
-    font-weight: 300;
-    color: var(--rule);
-    letter-spacing: 0.06em;
-    text-align: center;
-  }
-
-  /* ── FIGURE: the shape of a runtime ── */
-  section.figure {
-    max-width: 775px;
-    border-bottom: none;
-    background: none;
-    padding: 0;
-    margin: 56px auto;
-    text-align: center;
-  }
-  .fig-title {
-    font-family: var(--serif);
-    font-size: 26px;
-    font-weight: 500;
-    color: var(--ink);
-    line-height: 1.25;
-    margin-bottom: 8px;
-    text-wrap: pretty;
-  }
-  .fig-tagline {
-    font-size: 15.5px;
-    color: var(--muted);
-    line-height: 1.6;
-    max-width: 640px;
-    margin: 0 auto;
-  }
-  section.figure svg { display: block; width: 100%; height: auto; margin: 28px 0 6px; position: relative; left: 15px; }
-  @media (max-width: 720px) {
-    section.figure { margin: 36px auto; }
-    section.figure svg { left: 0; }
-  }
-  .bridge {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 17.5px;
-    color: var(--ink-mid);
-    margin: 28px auto 0;
-    max-width: 640px;
-    text-wrap: pretty;
-  }
-
-  /* ── MOBILE ── */
-  @media (max-width: 640px) {
-    body { padding: 28px 20px 40px; font-size: 16px; }
-    h1 { font-size: 28px; }
-    header { padding-bottom: 18px; margin-bottom: 22px; }
-    section { margin-bottom: 22px; padding-bottom: 22px; }
-    .project { margin-bottom: 18px; padding-bottom: 18px; }
-    .project h3 { font-size: 18px; }
-    .quote { padding-left: 12px; margin-bottom: 14px; }
-  }
-
-  /* ── PRINT ── */
+  html, body { margin: 0; padding: 0; background: #FAF6F0; }
+  ::selection { background: rgba(161,78,46,0.15); }
+  a { color: #5A4D3C; text-decoration: none; border-bottom: 1px solid #C9BCA4; transition: color 0.2s, border-color 0.2s; }
+  a:hover { color: #A14E2E; border-bottom-color: #A14E2E; }
   @media print {
-    html, body { background: #fff; max-width: none; padding: 28px; font-size: 10pt; }
-    a { color: var(--ink); border: none; }
-    a::after { content: " (" attr(href) ")"; font-size: 8pt; color: var(--muted); }
+    html, body { background: #fff; }
+    a { color: #33291A; border: none; }
+    a::after { content: " (" attr(href) ")"; font-size: 8pt; color: #6B5D4F; }
   }
 </style>
 </head>
 <body>
+<div style="font-family:'EB Garamond', Georgia, serif; color:#33291A; font-size:17px; line-height:1.68; max-width:820px; margin:0 auto; padding:clamp(28px,5vw,56px) clamp(20px,4vw,48px) 72px; -webkit-font-smoothing:antialiased">
 
-<header>
-  <h1>Rajan Thakurdesai</h1>
-  <div class="tagline">19 Years · Systems Architect · Constraint Modeling · Graph Thinking</div>
-</header>
+  <header data-screen-label="Header" style="text-align:center; padding-bottom:26px; margin-bottom:34px; border-bottom:1px solid #D4C9B8">
+    <h1 style="margin:0; font-size:clamp(28px,4vw,38px); font-weight:400; letter-spacing:0.3px">Rajan Thakurdesai</h1>
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12.5px; letter-spacing:2px; color:#6B5D4F; margin-top:12px">19 Years · Systems Architect · Constraint Modeling · Graph Thinking</div>
+  </header>
 
-<section class="about">
-  <span class="label">The Through-Line</span>
-  <p>I start every problem by making it visible. A diagram, a mind map, a system sketch. Clarity precedes good architecture.</p>
-  <p>For nineteen years I've done the same thing across payments infrastructure, search systems, and commerce platforms: stand outside a complex system, feel where the pressure is accumulating, and make one small move that reorganizes everything.</p>
-  <p>I think in layers: what does the customer need today, what does the system need to become, and what's the smallest step that moves toward both.</p>
-  <p class="closer">I don't chase trends. I build foundations.</p>
-</section>
+  <section data-screen-label="Through-Line" style="max-width:680px; margin:0 auto 40px">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:2.5px; text-transform:uppercase; color:#A14E2E; margin-bottom:14px">The Through-Line</div>
+    <p style="margin:0 0 14px; text-wrap:pretty">I start every problem by making it visible. A diagram, a mind map, a system sketch. Clarity precedes good architecture.</p>
+    <p style="margin:0 0 14px; text-wrap:pretty">For nineteen years I've done the same thing across payments infrastructure, search systems, and commerce platforms: stand outside a complex system, feel where the pressure is accumulating, and make one small move that reorganizes everything.</p>
+    <p style="margin:0 0 14px; text-wrap:pretty">I think in layers: what does the customer need today, what does the system need to become, and what's the smallest step that moves toward both.</p>
+    <p style="margin:0; font-style:italic; font-weight:500; text-wrap:pretty">I don't chase trends. I build foundations.</p>
+  </section>
 
-<section class="figure">
-  <span class="label">One Shape, Many Bodies</span>
-  <h2 class="fig-title">Only the present holds the real form</h2>
-  <p class="fig-tagline">The past is written, the future is read. The present alone is real — and every hard problem lives at the crossing, where abstraction becomes actual.</p>
-  <svg viewBox="0 0 1400 745" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Only the present holds the real form — the past converges as settled world-lines into a single crossing, the present, which opens into the possibility lattice of the future.">
+  <section data-screen-label="Figure" style="margin:0 auto 44px; text-align:center">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:2.5px; text-transform:uppercase; color:#A14E2E">One Shape, Many Bodies</div>
+    <h2 style="margin:12px 0 8px; font-size:26px; font-weight:500; line-height:1.25; text-wrap:pretty">Only the present holds the real form</h2>
+    <p style="margin:0 auto; font-size:15.5px; color:#6B5D4F; line-height:1.6; max-width:640px; text-wrap:pretty">The past is written, the future is read. The present alone is real — and every hard problem lives at the crossing, where abstraction becomes actual.</p>
+    <svg style="display:block; width:100%; height:auto; margin:26px 0 4px" viewBox="0 0 1400 745" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Only the present holds the real form — the past converges as settled world-lines into a single crossing, the present, which opens into the possibility lattice of the future.">
   
   <text x="10" y="30" font-family="JetBrains Mono, monospace" font-size="22" letter-spacing="3" fill="#3D5A96">PAST · WRITTEN · LOGS</text>
-  <text x="700" y="30" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="22" letter-spacing="3" fill="#3B2F1E">PRESENT · REAL · RUNTIME</text>
+  <text x="700" y="30" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="22" letter-spacing="3" fill="#33291A">PRESENT · REAL · RUNTIME</text>
   <text x="1390" y="30" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="22" letter-spacing="3" fill="#47795B">FUTURE · ABSTRACT · CODE</text>
 
   
@@ -341,8 +90,8 @@
   <path d="M 700 540 L 708 548 L 700 556 L 692 548 Z" fill="#FAF6F0" stroke="#A6957E" stroke-width="1.8"></path>
 
   
-  <path d="M 700 272 L 755 320 L 700 368 L 645 320 Z" fill="#FAF6F0" stroke="#3B2F1E" stroke-width="2.4"></path>
-  <text x="700" y="327" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="20" fill="#3B2F1E">now</text>
+  <path d="M 700 272 L 755 320 L 700 368 L 645 320 Z" fill="#FAF6F0" stroke="#33291A" stroke-width="2.4"></path>
+  <text x="700" y="327" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="20" fill="#33291A">now</text>
   <text x="700" y="396" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="17" letter-spacing="1" fill="#A6957E">the only crossing · decision time</text>
 
   
@@ -356,95 +105,113 @@
   
   <text x="700" y="700" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="15" fill="#6B5D4F">the past accepts every form and returns only bounds · the present alone holds the real form · the future can only be read</text>
 </svg>
-  <p class="bridge">Every system I've built has this shape. The four below are four crossings I was hired to hold.</p>
-</section>
+    <p style="margin:22px auto 0; font-style:italic; font-size:17.5px; color:#5A4D3C; max-width:640px; text-wrap:pretty">Every system I've built has this shape. The four below are four crossings I was hired to hold.</p>
+  </section>
 
-<section>
-  <span class="label">Signature Work</span>
+  <section data-screen-label="Signature Work" style="max-width:720px; margin:0 auto 44px">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:2.5px; text-transform:uppercase; color:#A14E2E; margin-bottom:18px">Signature Work</div>
 
-  <article class="project">
-    <h3>Workflow Orchestration for Commerce</h3>
-    <div class="meta">Meta · 2020–2024</div>
-    <p>Multiple product teams couldn't onboard. One major product line couldn't integrate at all. Diagnosed the root cause as a structural impossibility in the platform's type system. Not a bug — a category-level design error. Spent two years making the case. Executed a 1,000-file migration with zero incidents. Built the replacement: a DAG-based workflow orchestration engine with a novel type system, version control, and visualization tooling. Five verticals, fifteen-plus products, billions of requests per year, multi-billion dollar payment volume. Grew to a team of six. Platform became so critical a dedicated team was created to assume ownership.</p>
-    <div class="impact">Zero-incident migration · Billions of requests/year · Platform outlived the team · 5 verticals · 15+ products</div>
-  </article>
+    <article style="padding:26px 0 28px; border-top:1px solid #E3D9C6">
+      <div style="display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:4px 20px; margin-bottom:8px">
+        <h3 style="margin:0; font-size:21px; font-weight:600">Workflow Orchestration for Commerce</h3>
+        <div style="font-family:'JetBrains Mono', monospace; font-size:12px; color:#6B5D4F; letter-spacing:0.5px">Meta · 2020–2024</div>
+      </div>
+      <p style="margin:0; text-wrap:pretty">Multiple product teams couldn't onboard. One major product line couldn't integrate at all. Diagnosed the root cause as a structural impossibility in the platform's type system. Not a bug — a category-level design error. Spent two years making the case. Executed a 1,000-file migration with zero incidents. Built the replacement: a DAG-based workflow orchestration engine with a novel type system, version control, and visualization tooling. Five verticals, fifteen-plus products, billions of requests per year, multi-billion dollar payment volume. Grew to a team of six. Platform became so critical a dedicated team was created to assume ownership.</p>
+      <div style="margin-top:14px; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#3E6B50; line-height:2">
+        <span style="white-space:nowrap">Zero-incident migration</span><span style="color:#B9AC93; padding:0 7px">·</span><span style="white-space:nowrap">Billions of requests/year</span><span style="color:#B9AC93; padding:0 7px">·</span><span style="white-space:nowrap">Platform outlived the team</span><br><span style="white-space:nowrap">5 verticals</span><span style="color:#B9AC93; padding:0 7px">·</span><span style="white-space:nowrap">15+ products</span>
+      </div>
+    </article>
 
-  <article class="project">
-    <h3>AWS Data Exchange — Search Vision &amp; Launch</h3>
-    <div class="meta">AWS · 2017–2020</div>
-    <p>Designed and launched the Marketplace feature of AWS Data Exchange, contributing to the service's path to GA. Built the search ingestion pipeline that decoupled indexing from publishing. Created the search vision mind map that aligned all ADX leadership on product direction — became the team's architectural reference document. Go-to architect; could diagram the entire ADX architecture on demand.</p>
-    <div class="impact">Aligned leadership · Enabled GA · Became the team's architectural reference</div>
-  </article>
+    <article style="padding:26px 0 28px; border-top:1px solid #E3D9C6">
+      <div style="display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:4px 20px; margin-bottom:8px">
+        <h3 style="margin:0; font-size:21px; font-weight:600">AWS Data Exchange — Search Vision &amp; Launch</h3>
+        <div style="font-family:'JetBrains Mono', monospace; font-size:12px; color:#6B5D4F; letter-spacing:0.5px">AWS · 2017–2020</div>
+      </div>
+      <p style="margin:0; text-wrap:pretty">Designed and launched the Marketplace feature of AWS Data Exchange, contributing to the service's path to GA. Built the search ingestion pipeline that decoupled indexing from publishing. Created the search vision mind map that aligned all ADX leadership on product direction — became the team's architectural reference document. Go-to architect; could diagram the entire ADX architecture on demand.</p>
+      <div style="margin-top:14px; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#3E6B50; line-height:2">
+        <span style="white-space:nowrap">Aligned leadership</span><span style="color:#B9AC93; padding:0 7px">·</span><span style="white-space:nowrap">Enabled GA</span><span style="color:#B9AC93; padding:0 7px">·</span><span style="white-space:nowrap">Became the team's architectural reference</span>
+      </div>
+    </article>
 
-  <article class="project">
-    <h3>EFD Project Rescue — CashPro Global Payments</h3>
-    <div class="meta">Bank of America · 2016–2017</div>
-    <p>Took over a failing payments delivery multiple sprints in. Diagnosed root problems, realigned the team, and delivered with zero defects within two months. Enabled major client migrations off legacy systems. Built automation reducing two-week processes to two to three days. Led four agile teams building payment processing for enterprise banking clients.</p>
-    <div class="impact">Zero-defect delivery · Unblocked strategic client migrations · Built lasting trust</div>
-  </article>
+    <article style="padding:26px 0 28px; border-top:1px solid #E3D9C6">
+      <div style="display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:4px 20px; margin-bottom:8px">
+        <h3 style="margin:0; font-size:21px; font-weight:600">EFD Project Rescue — CashPro Global Payments</h3>
+        <div style="font-family:'JetBrains Mono', monospace; font-size:12px; color:#6B5D4F; letter-spacing:0.5px">Bank of America · 2016–2017</div>
+      </div>
+      <p style="margin:0; text-wrap:pretty">Took over a failing payments delivery multiple sprints in. Diagnosed root problems, realigned the team, and delivered with zero defects within two months. Enabled major client migrations off legacy systems. Built automation reducing two-week processes to two to three days. Led four agile teams building payment processing for enterprise banking clients.</p>
+      <div style="margin-top:14px; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#3E6B50; line-height:2">
+        <span style="white-space:nowrap">Zero-defect delivery</span><span style="color:#B9AC93; padding:0 7px">·</span><span style="white-space:nowrap">Unblocked strategic client migrations</span><span style="color:#B9AC93; padding:0 7px">·</span><span style="white-space:nowrap">Built lasting trust</span>
+      </div>
+    </article>
 
-  <article class="project">
-    <h3>Upstream Rule Layer for Conversion Data (AI)</h3>
-    <div class="meta">Meta · 2026</div>
-    <p>Meta's largest advertisers needed finer control over conversion values before events entered the pipeline. I built the upstream rule-evaluation layer that gave them that control — and ran the delivery as a case study in AI-operated development: Claude wrote the code, reviewed it, and responded to reviewer feedback, grounded in my orchestration platform's codebase. Design doc to production in two weeks. The build system transferred to six engineers. Unblocked alpha partners representing $400M+. The finding: code generation is solved — the open problem is the engineer operating the system.</p>
-    <div class="impact">$400M+ unblocked · AI-operated SDLC, hands off · Doc → production in 2 weeks</div>
-  </article>
-</section>
+    <article style="padding:26px 0 6px; border-top:1px solid #E3D9C6">
+      <div style="display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:4px 20px; margin-bottom:8px">
+        <h3 style="margin:0; font-size:21px; font-weight:600">Upstream Rule Layer for Conversion Data (AI)</h3>
+        <div style="font-family:'JetBrains Mono', monospace; font-size:12px; color:#6B5D4F; letter-spacing:0.5px">Meta · 2026</div>
+      </div>
+      <p style="margin:0; text-wrap:pretty">Meta's largest advertisers needed finer control over conversion values before events entered the pipeline. I built the upstream rule-evaluation layer that gave them that control — and ran the delivery as a case study in AI-operated development: Claude wrote the code, reviewed it, and responded to reviewer feedback, grounded in my orchestration platform's codebase. Design doc to production in two weeks. The build system transferred to six engineers. Unblocked alpha partners representing $400M+. The finding: code generation is solved — the open problem is the engineer operating the system.</p>
+      <div style="margin-top:14px; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#3E6B50; line-height:2">
+        <span style="white-space:nowrap">$400M+ unblocked</span><span style="color:#B9AC93; padding:0 7px">·</span><span style="white-space:nowrap">AI-operated SDLC, hands off</span><span style="color:#B9AC93; padding:0 7px">·</span><span style="white-space:nowrap">Doc → production in 2 weeks</span>
+      </div>
+    </article>
+  </section>
 
-<section class="about">
-  <span class="label">Independent Research</span>
-  <p>Working with AI carries a hidden tax: every session starts cold, and the person with the most context pays the most — re-explaining what they already know. The Rapport Problem is my research into that tax and its inversion: instead of rebuilding rapport every session, write the contract that lets a cold mind — human or AI — begin the work faithfully. Intent declared up front; the acceptance test held sealed until the work meets it at the boundary. The engineer surfaced only at genuine decisions.</p>
-  <div class="impact" style="margin-top:8px">Personal work · Oct 2025 – present · Self-funded, full time · Publishing August 2026</div>
-</section>
+  <section data-screen-label="Independent Research" style="max-width:680px; margin:0 auto 40px; padding-top:36px; border-top:1px solid #D4C9B8">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:2.5px; text-transform:uppercase; color:#A14E2E; margin-bottom:14px">Independent Research</div>
+    <p style="margin:0 0 14px; text-wrap:pretty">Working with AI carries a hidden tax: every session starts cold, and the person with the most context pays the most — re-explaining what they already know. The Rapport Problem is my research into that tax and its inversion. Instead of rebuilding rapport every session, you write the contract that lets a cold mind — human or AI — begin faithfully. Intent is declared up front, acceptance is held apart from production, and the engineer surfaces only at genuine decisions.</p>
+    <p style="margin:0 0 14px; text-wrap:pretty">The mechanism is a write-store / read-store split. Work runs through two sealed branches: a Producer builds the artifact, an Auditor builds the acceptance test, and each verifies the other's output: the Producer checks that the criteria are sound, the Auditor checks that the artifact meets them. Only the Auditor seals. They iterate until a boundary decision is reached, and every pass — failure or success — is appended to a canonical store that is write-only and never queried directly.</p>
+    <p style="margin:0; text-wrap:pretty">Read-only views are derived from that store only after decision, each built for a specific purpose: one store, many views. A cold mind reads a settled view rather than the live stream, so it begins from a declared contract instead of an empty context. Its own decisions then become the next writes.</p>
+    <div style="margin-top:14px; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#3E6B50; line-height:2">
+      <span style="white-space:nowrap">Personal work</span><span style="color:#B9AC93; padding:0 7px">·</span><span style="white-space:nowrap">Oct 2025 – present</span><span style="color:#B9AC93; padding:0 7px">·</span><span style="white-space:nowrap">Self-funded, full time</span><span style="color:#B9AC93; padding:0 7px">·</span><span style="white-space:nowrap">Publishing August 2026</span>
+    </div>
+  </section>
 
-<section>
-  <span class="label">Full Record</span>
-  <p class="record-line"><strong>2025 – 26</strong> · Ads Pixel Foundation — Meta</p>
-  <p class="record-line"><strong>2020 – 24</strong> · Workflow Orchestration for Commerce — Meta</p>
-  <p class="record-line"><strong>2018 – 20</strong> · Search Integration, Data Exchange — AWS, New York</p>
-  <p class="record-line"><strong>2017 – 18</strong> · Search Foundation, Marketplace — AWS, Seattle</p>
-  <p class="record-line"><strong>2016 – 17</strong> · EFD Payment-File Orchestrator — Bank of America</p>
-  <p class="record-line"><strong>2015 – 16</strong> · CashPro Last Mile — Bank of America</p>
-  <p class="record-line"><strong>2012 – 15</strong> · Canonical Reporting Engine — Bank of America</p>
-  <p class="record-line"><strong>2010 – 11</strong> · Styling Generator, "How to Think in CSS" — Bank of America</p>
-  <p class="record-line"><strong>2009 – 17</strong> · Payment Initiation Engine — Bank of America</p>
-  <p class="record-line"><strong>2007 – 09</strong> · AAA + BCCR — Infosys / BofA, Pune</p>
-</section>
+  <section data-screen-label="Full Record" style="max-width:680px; margin:0 auto 40px; padding-top:36px; border-top:1px solid #D4C9B8">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:2.5px; text-transform:uppercase; color:#A14E2E; margin-bottom:14px">Full Record</div>
+    <div style="display:grid; grid-template-columns:92px 1fr; gap:8px 20px; align-items:baseline">
+      <strong style="font-size:16px; font-weight:600">2025 – 26</strong><span style="font-size:16.5px">Ads Pixel Foundation — Meta</span>
+      <strong style="font-size:16px; font-weight:600">2020 – 24</strong><span style="font-size:16.5px">Workflow Orchestration for Commerce — Meta</span>
+      <strong style="font-size:16px; font-weight:600">2018 – 20</strong><span style="font-size:16.5px">Search Integration, Data Exchange — AWS, New York</span>
+      <strong style="font-size:16px; font-weight:600">2017 – 18</strong><span style="font-size:16.5px">Search Foundation, Marketplace — AWS, Seattle</span>
+      <strong style="font-size:16px; font-weight:600">2016 – 17</strong><span style="font-size:16.5px">EFD Payment-File Orchestrator — Bank of America</span>
+      <strong style="font-size:16px; font-weight:600">2015 – 16</strong><span style="font-size:16.5px">CashPro Last Mile — Bank of America</span>
+      <strong style="font-size:16px; font-weight:600">2012 – 15</strong><span style="font-size:16.5px">Canonical Reporting Engine — Bank of America</span>
+      <strong style="font-size:16px; font-weight:600">2010 – 11</strong><span style="font-size:16.5px">Styling Generator, "How to Think in CSS" — Bank of America</span>
+      <strong style="font-size:16px; font-weight:600">2009 – 17</strong><span style="font-size:16.5px">Payment Initiation Engine — Bank of America</span>
+      <strong style="font-size:16px; font-weight:600">2007 – 09</strong><span style="font-size:16.5px">AAA + BCCR — Infosys / BofA, Pune</span>
+    </div>
+  </section>
 
-<section>
-  <span class="label">What People Say</span>
+  <section data-screen-label="What People Say" style="max-width:680px; margin:0 auto 40px; padding-top:36px; border-top:1px solid #D4C9B8">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:2.5px; text-transform:uppercase; color:#A14E2E; margin-bottom:16px">What People Say</div>
+    <div style="border-left:2px solid rgba(161,78,46,0.35); padding-left:16px; margin-bottom:22px">
+      <p style="margin:0 0 6px; font-style:italic; font-size:18px; line-height:1.6; text-wrap:pretty">"His super power is his ability to distill his big product ideas into documents / artifacts that others can understand."</p>
+      <div style="font-family:'JetBrains Mono', monospace; font-size:12px; color:#6B5D4F; letter-spacing:0.5px">Peer, AWS Data Exchange</div>
+    </div>
+    <div style="border-left:2px solid rgba(161,78,46,0.35); padding-left:16px; margin-bottom:22px">
+      <p style="margin:0 0 6px; font-style:italic; font-size:18px; line-height:1.6; text-wrap:pretty">"Getting lighting in meeting rooms just right. Rajan has quietly delivered a number of components that were stretch goals in our launch, and he did it with very little overhead."</p>
+      <div style="font-family:'JetBrains Mono', monospace; font-size:12px; color:#6B5D4F; letter-spacing:0.5px">General Manager, AWS Data Exchange</div>
+    </div>
+    <div style="border-left:2px solid rgba(161,78,46,0.35); padding-left:16px; margin-bottom:22px">
+      <p style="margin:0 0 6px; font-style:italic; font-size:18px; line-height:1.6; text-wrap:pretty">"He is not just a cornerstone but a foundation on which the entire team can rely upon."</p>
+      <div style="font-family:'JetBrains Mono', monospace; font-size:12px; color:#6B5D4F; letter-spacing:0.5px">SVP, Senior Technology Manager, Bank of America</div>
+    </div>
+    <div style="border-left:2px solid rgba(161,78,46,0.35); padding-left:16px; margin-bottom:0">
+      <p style="margin:0 0 6px; font-style:italic; font-size:18px; line-height:1.6; text-wrap:pretty">"You have consistently shown an ability to solve difficult technical problems with clean and well-articulated solutions which are above the standard at your level."</p>
+      <div style="font-family:'JetBrains Mono', monospace; font-size:12px; color:#6B5D4F; letter-spacing:0.5px">Engineering Manager, Meta</div>
+    </div>
+  </section>
 
-  <div class="quote">
-    <p>"His super power is his ability to distill his big product ideas into documents / artifacts that others can understand."</p>
-    <div class="attr">Peer, AWS Data Exchange</div>
-  </div>
+  <section data-screen-label="Say Hello" style="max-width:680px; margin:0 auto 40px; padding-top:36px; border-top:1px solid #D4C9B8">
+    <div style="font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:2.5px; text-transform:uppercase; color:#A14E2E; margin-bottom:12px">Say Hello</div>
+    <div style="display:flex; flex-wrap:wrap; gap:6px 12px; align-items:baseline; font-size:18px">
+      <a href="mailto:rthakurdesai@gmail.com">rthakurdesai@gmail.com</a>
+      <span style="color:#A6957E">·</span>
+      <a href="https://linkedin.com/in/rajanthakurdesai">LinkedIn</a>
+    </div>
+  </section>
 
-  <div class="quote">
-    <p>"Getting lighting in meeting rooms just right. Rajan has quietly delivered a number of components that were stretch goals in our launch, and he did it with very little overhead."</p>
-    <div class="attr">General Manager, AWS Data Exchange</div>
-  </div>
-
-  <div class="quote">
-    <p>"He is not just a cornerstone but a foundation on which the entire team can rely upon."</p>
-    <div class="attr">SVP, Senior Technology Manager, Bank of America</div>
-  </div>
-
-  <div class="quote">
-    <p>"You have consistently shown an ability to solve difficult technical problems with clean and well-articulated solutions which are above the standard at your level."</p>
-    <div class="attr">Engineering Manager, Meta</div>
-  </div>
-</section>
-
-<section class="contact">
-  <span class="label">Say Hello</span>
-  <div class="links">
-    <a href="mailto:rthakurdesai@gmail.com">rthakurdesai@gmail.com</a>
-    <span class="sep">·</span>
-    <a href="https://linkedin.com/in/rajanthakurdesai">LinkedIn</a>
-  </div>
-</section>
-
-<footer>Rajendra Thakurdesai</footer>
-
+  <footer style="max-width:680px; margin:0 auto; border-top:1px solid #D4C9B8; padding:26px 0 4px; text-align:center; font-family:'JetBrains Mono', monospace; font-size:12px; color:#8A7B68">Rajendra Thakurdesai</footer>
+</div>
 </body>
 </html>
