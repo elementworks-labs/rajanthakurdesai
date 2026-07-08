@@ -118,7 +118,7 @@
       </div>
       <p style="margin:0; text-wrap:pretty">Multiple product teams couldn't onboard. One major product line couldn't integrate at all. Diagnosed the root cause as a structural impossibility in the platform's type system. Not a bug — a category-level design error. Spent two years making the case. Executed a 1,000-file migration with zero incidents. Built the replacement: a DAG-based workflow orchestration engine with a novel type system, version control, and visualization tooling. Five verticals, fifteen-plus products, billions of requests per year, multi-billion dollar payment volume. Grew to a team of six. Platform became so critical a dedicated team was created to assume ownership.</p>
       <div style="margin-top:14px; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#3E6B50; line-height:2">
-        <span style="white-space:nowrap">Zero-incident migration</span><span style="color:#B9AC93; padding:0 7px">·</span><span style="white-space:nowrap">Billions of requests/year</span><span style="color:#B9AC93; padding:0 7px">·</span><span style="white-space:nowrap">Platform outlived the team</span><br><span style="white-space:nowrap">5 verticals</span><span style="color:#B9AC93; padding:0 7px">·</span><span style="white-space:nowrap">15+ products</span>
+        <span style="white-space:nowrap">Zero-incident migration</span> <span style="color:#B9AC93; padding:0 5px">·</span> <span style="white-space:nowrap">Billions of requests/year</span> <span style="color:#B9AC93; padding:0 5px">·</span> <span style="white-space:nowrap">Platform outlived the team</span><br><span style="white-space:nowrap">5 verticals</span> <span style="color:#B9AC93; padding:0 5px">·</span> <span style="white-space:nowrap">15+ products</span>
       </div>
     </article>
 
@@ -129,7 +129,7 @@
       </div>
       <p style="margin:0; text-wrap:pretty">Designed and launched the Marketplace feature of AWS Data Exchange, contributing to the service's path to GA. Built the search ingestion pipeline that decoupled indexing from publishing. Created the search vision mind map that aligned all ADX leadership on product direction — became the team's architectural reference document. Go-to architect; could diagram the entire ADX architecture on demand.</p>
       <div style="margin-top:14px; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#3E6B50; line-height:2">
-        <span style="white-space:nowrap">Aligned leadership</span><span style="color:#B9AC93; padding:0 7px">·</span><span style="white-space:nowrap">Enabled GA</span><span style="color:#B9AC93; padding:0 7px">·</span><span style="white-space:nowrap">Became the team's architectural reference</span>
+        <span style="white-space:nowrap">Aligned leadership</span> <span style="color:#B9AC93; padding:0 5px">·</span> <span style="white-space:nowrap">Enabled GA</span> <span style="color:#B9AC93; padding:0 5px">·</span> <span style="white-space:nowrap">Became the team's architectural reference</span>
       </div>
     </article>
 
@@ -140,7 +140,7 @@
       </div>
       <p style="margin:0; text-wrap:pretty">Took over a failing payments delivery multiple sprints in. Diagnosed root problems, realigned the team, and delivered with zero defects within two months. Enabled major client migrations off legacy systems. Built automation reducing two-week processes to two to three days. Led four agile teams building payment processing for enterprise banking clients.</p>
       <div style="margin-top:14px; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#3E6B50; line-height:2">
-        <span style="white-space:nowrap">Zero-defect delivery</span><span style="color:#B9AC93; padding:0 7px">·</span><span style="white-space:nowrap">Unblocked strategic client migrations</span><span style="color:#B9AC93; padding:0 7px">·</span><span style="white-space:nowrap">Built lasting trust</span>
+        <span style="white-space:nowrap">Zero-defect delivery</span> <span style="color:#B9AC93; padding:0 5px">·</span> <span style="white-space:nowrap">Unblocked strategic client migrations</span> <span style="color:#B9AC93; padding:0 5px">·</span> <span style="white-space:nowrap">Built lasting trust</span>
       </div>
     </article>
 
@@ -151,7 +151,7 @@
       </div>
       <p style="margin:0; text-wrap:pretty">Meta's largest advertisers needed finer control over conversion values before events entered the pipeline. I built the upstream rule-evaluation layer that gave them that control — and ran the delivery as a case study in AI-operated development: Claude wrote the code, reviewed it, and responded to reviewer feedback, grounded in my orchestration platform's codebase. Design doc to production in two weeks. The build system transferred to six engineers. Unblocked alpha partners representing $400M+. The finding: code generation is solved — the open problem is the engineer operating the system.</p>
       <div style="margin-top:14px; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#3E6B50; line-height:2">
-        <span style="white-space:nowrap">$400M+ unblocked</span><span style="color:#B9AC93; padding:0 7px">·</span><span style="white-space:nowrap">AI-operated SDLC, hands off</span><span style="color:#B9AC93; padding:0 7px">·</span><span style="white-space:nowrap">Doc → production in 2 weeks</span>
+        <span style="white-space:nowrap">$400M+ unblocked</span> <span style="color:#B9AC93; padding:0 5px">·</span> <span style="white-space:nowrap">AI-operated SDLC, hands off</span> <span style="color:#B9AC93; padding:0 5px">·</span> <span style="white-space:nowrap">Doc → production in 2 weeks</span>
       </div>
     </article>
   </section>
@@ -162,7 +162,7 @@
     <p style="margin:0 0 14px; text-wrap:pretty">The mechanism is a write-store / read-store split. Work runs through two sealed branches: a Producer builds the artifact, an Auditor builds the acceptance test, and each verifies the other's output: the Producer checks that the criteria are sound, the Auditor checks that the artifact meets them. Only the Auditor seals. They iterate until a boundary decision is reached, and every pass — failure or success — is appended to a canonical store that is write-only and never queried directly.</p>
     <p style="margin:0; text-wrap:pretty">Read-only views are derived from that store only after decision, each built for a specific purpose: one store, many views. A cold mind reads a settled view rather than the live stream, so it begins from a declared contract instead of an empty context. Its own decisions then become the next writes.</p>
     <div style="margin-top:14px; font-family:'JetBrains Mono', monospace; font-size:12.5px; color:#3E6B50; line-height:2">
-      <span style="white-space:nowrap">Personal work</span><span style="color:#B9AC93; padding:0 7px">·</span><span style="white-space:nowrap">Oct 2025 – present</span><span style="color:#B9AC93; padding:0 7px">·</span><span style="white-space:nowrap">Self-funded, full time</span><span style="color:#B9AC93; padding:0 7px">·</span><span style="white-space:nowrap">Publishing August 2026</span>
+      <span style="white-space:nowrap">Personal work</span> <span style="color:#B9AC93; padding:0 5px">·</span> <span style="white-space:nowrap">Oct 2025 – present</span> <span style="color:#B9AC93; padding:0 5px">·</span> <span style="white-space:nowrap">Self-funded, full time</span> <span style="color:#B9AC93; padding:0 5px">·</span> <span style="white-space:nowrap">Publishing August 2026</span>
     </div>
   </section>
 
